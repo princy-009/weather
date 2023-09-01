@@ -67,19 +67,19 @@
                 document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
 
                 if(data.weather.main == "Clouds"){
-                    weatherIcon.src = "/weather/images/clouds.png";
+                    weatherIcon.src = "images/clouds.png";
                 }
                 else if(data.weather[0].main == "Clear"){
-                    weatherIcon.src = "/weather/images/clear.png";
+                    weatherIcon.src = "images/clear.png";
                 }
                 else if(data.weather[0].main == "Rain"){
-                    weatherIcon.src = "/weather/images/rain.png";
+                    weatherIcon.src = "images/rain.png";
                 }
                 else if(data.weather[0].main == "Drizzle"){
-                    weatherIcon.src = "/weather/images/drizzle.png";
+                    weatherIcon.src = "images/drizzle.png";
                 }
                 else if(data.weather[0].main == "Mist"){
-                    weatherIcon.src = "/weather/images/mist.png";
+                    weatherIcon.src = "images/mist.png";
                 }
 
 
@@ -91,6 +91,11 @@
             
 
         }
+        searchBox.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+      checkWeather(searchBox.value);
+    }
+});
 
         searchBtn.addEventListener("click", ()=>{
             checkWeather(searchBox.value);
